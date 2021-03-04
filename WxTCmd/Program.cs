@@ -215,13 +215,13 @@ namespace WxTCmd
                             var timeZone = string.Empty;
                             var description = string.Empty;
 
-                            var payload = Encoding.ASCII.GetString(op.Payload);
+                            var payload = Encoding.UTF8.GetString(op.Payload);
 
                             var clipPay = string.Empty;
 
                             if (op.ClipboardPayload.IsNullOrEmpty() == false)
                             {
-                                clipPay = Encoding.ASCII.GetString(op.ClipboardPayload);
+                                clipPay = Encoding.UTF8.GetString(op.ClipboardPayload);
                             }
 
 
@@ -381,10 +381,10 @@ namespace WxTCmd
 
                             if (act.ClipboardPayload.IsNullOrEmpty() == false)
                             {
-                                clipPay = Encoding.ASCII.GetString(act.ClipboardPayload);
+                                clipPay = Encoding.UTF8.GetString(act.ClipboardPayload);
                             }
 
-                            var payload = Encoding.ASCII.GetString(act.Payload);
+                            var payload = Encoding.UTF8.GetString(act.Payload);
 
                             if (payload.StartsWith("{"))
                             {
